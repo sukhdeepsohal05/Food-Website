@@ -1,0 +1,169 @@
+@media screen and (max-width: 768px) {
+  .h1,
+  #home .h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    top: 0;
+    left: 0;
+  }
+
+  .navbar ul {
+    opacity: 0;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    width: 37px;
+    height: 32px;
+    position: relative;
+    /* top: 0px; */
+    right: 36px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease;
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+
+  .hamburger div {
+    height: 2.4px;
+    width: 78%;
+    background: white;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+
+  .hamburger div::before,
+  .hamburger div::after {
+    content: "";
+    width: 100%;
+    height: 2.4px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger div::before {
+    top: -8px;
+  }
+
+  .hamburger div::after {
+    top: 8px;
+  }
+
+  #checkbox {
+    position: absolute;
+    top: 37px;
+    right: 37px;
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10000;
+    border-radius: 4px;
+  }
+
+  #checkbox:checked ~ .hamburger div {
+    transform: rotate(135deg);
+  }
+  #checkbox:hover:checked ~ .hamburger div {
+    transform: rotate(225deg);
+  }
+
+  #checkbox:checked ~ .hamburger > div::before,
+  #checkbox:checked ~ .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  input#checkbox:checked ~ .menu {
+    transform: scale(1);
+    border-radius: 0%;
+  }
+
+  input#checkbox:checked ~ .menu ul {
+    opacity: 1;
+  }
+
+  .menu {
+    opacity: 1;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0 0 0 / 62%);
+    backdrop-filter: blur(22px);
+    overflow: hidden;
+    transform: scale(0);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+  }
+
+  .navbar ul {
+    gap: 0.7rem 0rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    flex-direction: column;
+  }
+
+  #home {
+    height: 592px;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .service img {
+    width: 100px;
+  }
+
+  .clients {
+    gap: 3rem;
+  }
+
+  .clients::before {
+    height: 1020px;
+  }
+
+  .contact-form-group {
+    /* height: 800px; */
+    width: 300px;
+  }
+
+  .contact-form-group input,
+  .contact-form-group textarea {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .contact-form-group-container {
+    margin: 0px;
+    justify-content: center;
+  }
+
+  .clients img {
+    width: 120px;
+  }
+}
